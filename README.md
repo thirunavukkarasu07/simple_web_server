@@ -43,7 +43,6 @@ with socketserver.TCPServer(("", PORT), MyHandler) as httpd:
 
 ![Screenshot 2025-02-26 155619](https://github.com/user-attachments/assets/9c16481e-70f9-4963-be78-1e52729bb538)
 
-![Screenshot 2025-02-26 155117](https://github.com/user-attachments/assets/9f5b8e82-1e8f-4a89-9335-62423dbc4383)
 
 
 # RESULT:
