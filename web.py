@@ -1,15 +1,31 @@
-import http.server
-import socketserver
+from http.server import HTTPServer,BaseHTTPRequestHandler
 
-PORT = 8000
+content='''
+<!doctype html>
+<html>
+<head>
+<title> My Web Server</title>
+</head>
+<body>
+<h1>Welcome</h1>
+<h1>Welcome</h1>
 
-class MyHandler(http.server.SimpleHTTPRequestHandler):
+<h1>Welcome</h1>
+
+
+</body>
+</html>
+'''
+
+class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
-        self.send_response(200)
-        self.send_header("Content-type", "text/html")
+        print("Get request received...")
+        self.send_response(200) 
+        self.send_header("content-type", "text/html")       
         self.end_headers()
-        self.wfile.write(b"<html><body><h1>Sukanth</h1></body></html>")
+        self.wfile.write(content.encode())
 
-with socketserver.TCPServer(("", PORT), MyHandler) as httpd:
-    print(f"Serving at port {PORT}")
-    httpd.serve_forever()
+print("This is my webserver") 
+server_address =('',80)
+httpd = HTTPServer(server_address,MyServer)
+httpd.serve_forever()
