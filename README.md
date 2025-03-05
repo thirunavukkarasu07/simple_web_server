@@ -48,6 +48,7 @@ httpd.serve_forever()
 ```
 
 # OUTPUT:
+<<<<<<< HEAD
 ![alt text](<Screenshot (1).png>)
 
 # RESULT:
